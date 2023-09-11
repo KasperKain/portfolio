@@ -1,4 +1,4 @@
-import "./ParticleBackground.css";
+import "./particleBackground.css";
 import { useEffect, useRef } from "react";
 
 const ParticleBackground = () => {
