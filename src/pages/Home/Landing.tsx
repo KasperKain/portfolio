@@ -32,9 +32,11 @@ If you're interested in seeing how I made this, click the [website code] button.
       <span style={{ display: "flex" }}>
         <Button
           title='Website Code'
-          onClick={() =>
-            console.log("Want to see how I made this? Check out my GITHUB")
-          }
+          onClick={() => () =>
+            window.open(
+              "https://github.com/KasperKain/portfolio_client",
+              "_blank"
+            )}
           delay={3000}
         />
         <Button
