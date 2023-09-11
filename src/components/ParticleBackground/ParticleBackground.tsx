@@ -5,7 +5,7 @@ const ParticleBackground = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
+    const canvas: any = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
     canvas.width = window.innerWidth;
@@ -20,7 +20,12 @@ const ParticleBackground = () => {
     setCanvasSize();
 
     class Particle {
-      constructor(x, y, radius) {
+      x: number;
+      y: any;
+      radius: number;
+      alpha: number;
+      velocity: { x: number; y: number };
+      constructor(x: number, y: any, radius: number) {
         this.x = x;
         this.y = y;
         this.radius = radius;
@@ -51,7 +56,7 @@ const ParticleBackground = () => {
       }
     }
 
-    let particles = [];
+    let particles: any[] = [];
     let frame = 0;
 
     function animate() {
