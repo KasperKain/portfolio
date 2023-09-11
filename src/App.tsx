@@ -19,7 +19,7 @@ import SingleToy from "./admin/Form/Toy";
 import { pageColors } from "./utils/constants_colors";
 
 import Home from "./pages/Home/Home";
-import ParticleBackground from "./components/ParticleBackground/particleBackground";
+import ParticleBackground from "./components/ParticleBackground/ParticleBackground";
 import ProtectedWrapper from "./auth/ProtectedWrapper";
 import Login from "./admin/Form/Login";
 import Logout from "./auth/Logout";
