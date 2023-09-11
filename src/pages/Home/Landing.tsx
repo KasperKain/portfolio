@@ -33,10 +33,7 @@ If you're interested in seeing how I made this, click the [website code] button.
         <Button
           title='Website Code'
           onClick={() => () =>
-            window.open(
-              "https://github.com/KasperKain/portfolio_client",
-              "_blank"
-            )}
+            window.open("https://github.com/KasperKain/portfolio", "_blank")}
           delay={3000}
         />
         <Button
