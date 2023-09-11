@@ -1,0 +1,62 @@
+.TextBox {
+  border-bottom: 5px solid rgba(0, 0, 0, 0.309);
+  border-left: 5px solid rgba(0, 0, 0, 0.272);
+
+  border-image: url("../../assets/images/border3.svg");
+  border-image-slice: 70;
+  border-width: 30px;
+  border-style: solid;
+  opacity: 0;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.TextBoxAnim {
+  animation: textBoxIntro 1s cubic-bezier(0.12, 0, 0.39, 0) 0s 1 normal forwards;
+}
+
+.TextBox pre {
+  font-size: 22px;
+  padding: 0px 20px;
+  opacity: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.TextBoxAnim pre {
+  animation: textBoxIntroP 1s normal forwards;
+}
+
+@keyframes textBoxIntro {
+  0% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  40%,
+  70%,
+  100% {
+    opacity: 1;
+  }
+
+  0% {
+    opacity: 0;
+  }
+  55%,
+  75% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes textBoxIntroP {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

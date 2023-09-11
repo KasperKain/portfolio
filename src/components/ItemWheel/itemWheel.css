@@ -1,0 +1,11 @@
+.ItemWheel {
+  width: 100%;
+  padding: 10px 10%;
+  height: 100px;
+  background-color: rgb(0, 0, 0);
+  text-transform: uppercase;
+}
+
+.ItemWheel div {
+  height: 100%;
+}

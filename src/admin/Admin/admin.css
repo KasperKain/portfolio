@@ -1,0 +1,79 @@
+.AdminPage {
+  background-color: rgb(149, 148, 144);
+  height: 100%;
+}
+
+.AdminHeader {
+  background-color: rgb(0, 0, 0);
+  height: 100px;
+}
+
+.AdminHeader ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+.AdminHeader ul li {
+  text-transform: uppercase;
+  list-style: none;
+  color: white;
+  border-bottom: 2px solid white;
+  display: flex;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.AdminHeader ul li:hover {
+  background-color: rgb(59, 58, 58);
+}
+
+.AdminItemContainer {
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+}
+
+.AdminItemContainer li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 10px;
+  background-color: white;
+}
+
+.AdminItemContainer a {
+  width: 350px;
+  padding: 0px 20px;
+  background-color: rgb(27, 25, 32);
+  max-width: 500px;
+  text-align: center;
+  height: min-content;
+}
+
+.AdminItemContainer li a:hover {
+  background-color: rgb(75, 75, 75);
+}
+
+.AdminItemContainer li button {
+  height: 100%;
+  width: 50px;
+  background-color: rgb(27, 25, 32);
+  border: none;
+  height: min-content;
+}
+
+.new-button {
+  margin-top: 50px;
+  border: 2px solid white;
+  border-radius: 30px;
+}
+
+.AdminItemContainer li button:hover {
+  background-color: rgb(129, 129, 129);
+}

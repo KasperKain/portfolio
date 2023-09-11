@@ -1,0 +1,54 @@
+.Button {
+  border-image: url("../../assets/images/border1.svg");
+  border-image-slice: 45;
+  border-width: 15px;
+
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  min-width: 250px;
+  max-width: 400px;
+  flex: 1;
+  margin: auto;
+  opacity: 0;
+}
+
+.ButtonAnim {
+  animation: ButtonIntro 0.6s ease 0s 1 normal forwards;
+}
+
+.ButtonNull {
+  pointer-events: none;
+  background-color: rgba(5, 5, 5, 0.167);
+  color: gray;
+}
+
+.Button:hover {
+  background-color: rgba(0, 0, 0, 0.704);
+  font-style: oblique;
+}
+
+@keyframes ButtonIntro {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  80% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ButtonHover {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
