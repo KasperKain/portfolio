@@ -3,6 +3,8 @@ import React, { useState, useLayoutEffect } from "react";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
 import { pageColors } from "../../utils/constants_colors";
+import prevArrowImage from "../../assets/images/arrowLeft.svg";
+import nextArrowImage from "../../assets/images/arrowRight.svg";
 
 interface NavWheelProps {
   onColorChange: (color: string) => void;
@@ -42,7 +44,7 @@ const NavWheel: React.FC<NavWheelProps> = (props) => {
           ...style,
           width: "70px",
           height: "50px",
-          backgroundImage: "url('src/assets/images/arrowRight.svg')",
+          backgroundImage: `url(${nextArrowImage})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           pointerEvents: "auto",
@@ -61,7 +63,7 @@ const NavWheel: React.FC<NavWheelProps> = (props) => {
           ...style,
           width: "70px",
           height: "50px",
-          backgroundImage: "url('src/assets/images/arrowLeft.svg')",
+          backgroundImage: `url(${prevArrowImage})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           pointerEvents: "auto",

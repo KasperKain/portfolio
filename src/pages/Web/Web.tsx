@@ -29,12 +29,8 @@ const Web: React.FC = () => {
       ) : (
         <>
           <SectionContainer>
-            <ImageBox src={website.image1} />
-            <ImageBox src={website.image2} />
-          </SectionContainer>
-          <SectionContainer>
             <TitleBar text={website.title} />
-            <TextBox text={website.description} delay={1500} key={uuid()} />
+            <ImageBox src={website.image1} />
             <span
               style={{
                 display: "flex",
@@ -57,6 +53,10 @@ const Web: React.FC = () => {
                 key={uuid()}
               />
             </span>
+          </SectionContainer>
+          <SectionContainer>
+            <ImageBox src={website.image2} />
+            <TextBox text={website.description} delay={1500} key={uuid()} />
           </SectionContainer>
         </>
       )}

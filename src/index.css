@@ -10,16 +10,25 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
   background: radial-gradient(circle, black, transparent);
   overflow: hidden;
 }
 
-@media (max-width: 868px) {
+/* @media (max-width: 868px) {
   *:not(.NavWheel *) {
     animation-duration: 0s !important;
     transition: none !important;
+  }
+} */
+
+@media (max-width: 668px) {
+  pre,
+  p {
+    font-size: 16px !important;
+  }
+  h1,
+  h2,
+  label {
+    font-size: 20px;
   }
 }

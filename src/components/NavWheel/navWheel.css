@@ -1,8 +1,9 @@
 .NavWheel {
   width: 100%;
   padding: 10px 10%;
-  height: 100px;
+  height: 120px;
   background-color: rgb(0, 0, 0);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.548);
 }
 
 .NavWheel div {

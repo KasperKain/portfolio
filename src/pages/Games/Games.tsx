@@ -33,12 +33,13 @@ const Games: React.FC = () => {
         <>
           <SectionContainer>
             <TitleBar text={game.title} />
-            <TextBox key={uuid()} text={game.description} delay={1000} />
+            <ImageBox src={game.image} />
             <ul
               style={{
                 display: "flex",
                 flexWrap: "wrap",
                 width: "100%",
+                justifyContent: "center",
               }}
             >
               {game.skills.map((skill: string, index: number) => {
@@ -54,7 +55,6 @@ const Games: React.FC = () => {
             </ul>
           </SectionContainer>
           <SectionContainer>
-            <ImageBox src={game.image} />
             <span
               style={{
                 display: "flex",
@@ -73,6 +73,7 @@ const Games: React.FC = () => {
                 nullMessage={!game.github ? "unavailable" : undefined}
               />
             </span>
+            <TextBox key={uuid()} text={game.description} delay={1000} />
           </SectionContainer>
         </>
       )}

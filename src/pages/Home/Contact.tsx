@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
   return (
     <>
       <SectionContainer>
-        <TitleBar text='Name and Email' />
+        <TitleBar text='Send an email' />
 
         <form
           onSubmit={handleSubmit}
@@ -80,12 +80,9 @@ const Contact: React.FC = () => {
             onChange={handleInputChange}
             required
           />
-
-          <Button title='Send Message' />
         </form>
       </SectionContainer>
       <SectionContainer>
-        <TitleBar text='Your message' />
         <label>Message:</label>
         <textarea
           style={{ width: "100%", height: "100%", backgroundColor: "black" }}
@@ -94,6 +91,7 @@ const Contact: React.FC = () => {
           onChange={handleInputChange}
           required
         ></textarea>
+        <Button title='Send Message' />
       </SectionContainer>
     </>
   );

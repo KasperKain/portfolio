@@ -29,13 +29,9 @@ If you're interested in seeing how I made this, click the [website code] button.
         "
         delay={1400}
       />
-      <span style={{ display: "flex" }}>
-        <Button
-          title='Website Code'
-          onClick={() => () =>
-            window.open("https://github.com/KasperKain/portfolio", "_blank")}
-          delay={3000}
-        />
+      <span
+        style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+      >
         <Button
           title='Instructions'
           onClick={() => setShowInstructions((prev) => !prev)}

@@ -3,13 +3,14 @@
   border-image-slice: 45;
   border-width: 15px;
 
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.223);
   color: white;
-  min-width: 250px;
-  max-width: 400px;
   flex: 1;
   margin: auto;
   opacity: 0;
+  min-width: fit-content;
+  max-width: 500px;
+  max-height: 100px;
 }
 
 .ButtonAnim {

@@ -1,6 +1,8 @@
+import "./itemWheel.css";
 import React from "react";
 import Slider from "react-slick";
-import "./itemWheel.css";
+import prevArrowImage from "../../assets/images/arrowLeft.svg";
+import nextArrowImage from "../../assets/images/arrowRight.svg";
 const ItemWheel: React.FC<any> = (props) => {
   function NextArrow(props: { className: any; style: any; onClick: any }) {
     const { className, style, onClick } = props;
@@ -11,7 +13,7 @@ const ItemWheel: React.FC<any> = (props) => {
           ...style,
           width: "70px",
           height: "50px",
-          backgroundImage: "url('src/assets/images/arrowRight.svg')",
+          backgroundImage: `url(${nextArrowImage})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
@@ -29,7 +31,7 @@ const ItemWheel: React.FC<any> = (props) => {
           ...style,
           width: "70px",
           height: "50px",
-          backgroundImage: "url('src/assets/images/arrowLeft.svg')",
+          backgroundImage: `url(${prevArrowImage})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}

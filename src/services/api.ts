@@ -1,5 +1,5 @@
-const BASE_URL: String =
-  import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+const BASE_URL: String = "http://localhost:5000";
+// import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
 
 export const fetchData = async (contentType: string) => {
   const response = await fetch(`${BASE_URL}/${contentType}`);

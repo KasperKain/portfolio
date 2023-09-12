@@ -21,14 +21,21 @@ const Art: React.FC = () => {
   };
   return (
     <PageContainer>
+      {!art ? (
+        <></>
+      ) : (
+        <>
+          <SectionContainer>
+            <TitleBar text={art.title} />
+            <ImageBox src={art.image} />
+          </SectionContainer>
+        </>
+      )}
+
       <ItemWheel
         items={arts}
         updateSelectedItem={updateSelectedItem}
       ></ItemWheel>
-      <SectionContainer>
-        <TitleBar text={art.title} />
-        <ImageBox src={art.image} />
-      </SectionContainer>
     </PageContainer>
   );
 };
