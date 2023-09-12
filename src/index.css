@@ -14,13 +14,6 @@ body {
   overflow: hidden;
 }
 
-/* @media (max-width: 868px) {
-  *:not(.NavWheel *) {
-    animation-duration: 0s !important;
-    transition: none !important;
-  }
-} */
-
 @media (max-width: 668px) {
   pre,
   p {
@@ -28,7 +21,8 @@ body {
   }
   h1,
   h2,
-  label {
+  label,
+  button {
     font-size: 20px;
   }
 }

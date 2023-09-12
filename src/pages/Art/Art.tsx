@@ -7,7 +7,7 @@ import ImageBox from "../../components/ImageBox/ImageBox";
 import ItemWheel from "../../components/ItemWheel/ItemWheel";
 const Art: React.FC = () => {
   const [arts, setArts] = useState(null);
-  const [art, setArt] = useState<any>({ title: "loading" });
+  const [art, setArt] = useState<any>();
 
   useEffect(() => {
     fetchData("art").then((data) => {

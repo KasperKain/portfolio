@@ -7,7 +7,6 @@
   background-color: rgba(0, 0, 0, 0.47);
   animation: SectionContainerIntro 2s ease forwards;
   padding: 10px;
-  min-width: 400px;
 }
 
 @keyframes SectionContainerIntro {

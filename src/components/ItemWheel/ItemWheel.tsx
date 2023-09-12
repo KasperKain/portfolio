@@ -44,6 +44,7 @@ const ItemWheel: React.FC<any> = (props) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    centerPadding: "10px",
     nextArrow: (
       <NextArrow className={undefined} style={undefined} onClick={undefined} />
     ),

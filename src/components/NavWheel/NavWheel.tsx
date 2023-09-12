@@ -13,7 +13,7 @@ const NavWheel: React.FC<NavWheelProps> = (props) => {
   const navigate = useNavigate();
   const [pages, setPages] = useState<any[]>([
     { name: "home", path: "", title: "HOME" },
-    { name: "games", path: "games", title: "GAME DEMOS" },
+    { name: "games", path: "games", title: "GAMES" },
     { name: "web", path: "web", title: "WEBSITES" },
     { name: "toys", path: "toys", title: "WEB TOYS" },
     { name: "art", path: "art", title: "DOODLES" },
@@ -73,11 +73,12 @@ const NavWheel: React.FC<NavWheelProps> = (props) => {
     );
   }
 
-  const settings = {
+  let settings = {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    centerPadding: "10px",
     nextArrow: (
       <NextArrow className={undefined} style={undefined} onClick={undefined} />
     ),
