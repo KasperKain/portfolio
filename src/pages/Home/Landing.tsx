@@ -23,9 +23,9 @@ const Landing: React.FC = () => {
       <TitleBar text='WELCOME' />
       <TextBox
         text="
-Welcome to my portfolio (ish)! Feel free to browse around and checkout some of the stuff I make
+Welcome to my portfolio (ish)! Feel free to browse around and checkout some of the stuff I make. 
 
-If you're interested in seeing how I made this, click the [website code] button. if you're unsure how to navigate the website, click [instructions]
+if you're unsure how to navigate the website, click [instructions]
         "
         delay={1400}
       />

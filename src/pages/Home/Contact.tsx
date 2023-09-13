@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
         >
           <label>Name:</label>
           <input
-            style={{ width: "100%", backgroundColor: "black" }}
+            style={{ width: "100%", color: "black" }}
             type='text'
             name='name'
             value={formData.name}
@@ -73,25 +73,24 @@ const Contact: React.FC = () => {
 
           <label>Email:</label>
           <input
-            style={{ width: "100%", backgroundColor: "black" }}
+            style={{ width: "100%", color: "black" }}
             type='email'
             name='email'
             value={formData.email}
             onChange={handleInputChange}
             required
           />
+
+          <label>Message:</label>
+          <textarea
+            style={{ width: "100%", color: "black" }}
+            name='message'
+            value={formData.message}
+            onChange={handleInputChange}
+            required
+          ></textarea>
+          <Button title='Send Message' />
         </form>
-      </SectionContainer>
-      <SectionContainer>
-        <label>Message:</label>
-        <textarea
-          style={{ width: "100%", height: "100%", backgroundColor: "black" }}
-          name='message'
-          value={formData.message}
-          onChange={handleInputChange}
-          required
-        ></textarea>
-        <Button title='Send Message' />
       </SectionContainer>
     </>
   );
