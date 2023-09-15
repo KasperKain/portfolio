@@ -1,5 +1,5 @@
 import React from "react";
-import "./SectionContainer.css";
+import "./sectionContainer.css";
 
 interface SectionContainerProps {
   titleBar?: React.ReactNode;
