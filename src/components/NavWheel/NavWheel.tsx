@@ -1,10 +1,11 @@
 import "./navWheel.css";
 import React, { useState, useLayoutEffect } from "react";
-import Slider from "react-slick";
+import { Carousel } from "react-responsive-carousel";
 import { useNavigate } from "react-router-dom";
 import { pageColors } from "../../utils/constants_colors";
 import prevArrowImage from "../../assets/images/arrowLeft.svg";
 import nextArrowImage from "../../assets/images/arrowRight.svg";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 interface NavWheelProps {
   onColorChange: (color: string) => void;
@@ -35,75 +36,68 @@ const NavWheel: React.FC<NavWheelProps> = (props) => {
     setPages([...pageSet]);
   }, []);
 
-  function NextArrow(props: { className: any; style: any; onClick: any }) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{
-          ...style,
-          width: "70px",
-          height: "50px",
-          backgroundImage: `url(${nextArrowImage})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          pointerEvents: "auto",
-        }}
-        onClick={onClick}
-      />
-    );
-  }
-
-  function PrevArrow(props: { className: any; style: any; onClick: any }) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{
-          ...style,
-          width: "70px",
-          height: "50px",
-          backgroundImage: `url(${prevArrowImage})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          pointerEvents: "auto",
-        }}
-        onClick={onClick}
-      />
-    );
-  }
-
-  let settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    centerPadding: "10px",
-    nextArrow: (
-      <NextArrow className={undefined} style={undefined} onClick={undefined} />
-    ),
-    prevArrow: (
-      <PrevArrow className={undefined} style={undefined} onClick={undefined} />
-    ),
-    centerMode: true,
-    touchThreshold: 100,
-    afterChange: (current: number) => {
-      navigate(`/${pages[current].path}`);
-      props.onColorChange(pageColors[pages[current].name]);
-    },
-  };
-
   return (
     <div className='NavWheel'>
-      <Slider {...settings}>
+      <Carousel
+        showStatus={false}
+        infiniteLoop
+        useKeyboardArrows
+        autoPlay={false}
+        showThumbs={false}
+        showArrows={true}
+        renderArrowPrev={(onClickHandler, hasPrev) =>
+          hasPrev && (
+            <div
+              style={
+                {
+                  ...arrowStyles,
+                  backgroundImage: `url(${prevArrowImage})`,
+                  left: 10,
+                } as React.CSSProperties
+              }
+              onClick={onClickHandler}
+            />
+          )
+        }
+        renderArrowNext={(onClickHandler, hasNext) =>
+          hasNext && (
+            <div
+              onClick={onClickHandler}
+              style={
+                {
+                  ...arrowStyles,
+                  backgroundImage: `url(${nextArrowImage})`,
+                  right: 10,
+                } as React.CSSProperties
+              }
+            />
+          )
+        }
+        onChange={(index) => {
+          navigate(`/${pages[index].path}`);
+          props.onColorChange(pageColors[pages[index].name]);
+        }}
+      >
         {pages.map((page, index) => (
           <div className='item' key={index}>
             <h2>{page.title}</h2>
           </div>
         ))}
-      </Slider>
+      </Carousel>
     </div>
   );
+};
+
+const arrowStyles = {
+  width: "70px",
+  height: "50px",
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  cursor: "pointer",
+  position: "absolute",
+  top: "50%",
+  transform: "translateY(-50%)",
+  zIndex: 1000,
 };
 
 export default NavWheel;
