@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./instructions.css";
 import Button from "../Button/Button";
+import ButtonContainer from "../ButtonContainer/ButtonContainer";
 interface InstructionsProps {
   isOpen: boolean;
   onClose: () => void;
@@ -20,23 +21,26 @@ const Instructions: React.FC<InstructionsProps> = ({ isOpen, onClose }) => {
         <div className='Instructions'>
           <div className='instruction-container'>
             <i className='material-icons-outlined animate-slide'>pan_tool</i>
-            <p>Swipe the top bar to change the page.</p>
           </div>
-
-          <span>
-            <Button
-              title='CLOSE'
-              onClick={() => {
-                setOpen(false);
-                onClose();
-              }}
-            />
-          </span>
-
           <div className='instruction-container'>
-            <p>Swipe the bottom bar to change the content within the page.</p>
-            <i className='material-icons-outlined animate-slide'>pan_tool</i>
+            <p>Swipe the top bar to change the page.</p>
+            <p>Or click the left / right buttons.</p>
+            <br />
+            <p>Scroll down on any page for more content.</p>
           </div>
+
+          <span style={{ marginBottom: "60px" }}>
+            <ButtonContainer>
+              {" "}
+              <Button
+                title='CLOSE'
+                onClick={() => {
+                  setOpen(false);
+                  onClose();
+                }}
+              />
+            </ButtonContainer>
+          </span>
         </div>
       )}
     </>
