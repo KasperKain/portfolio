@@ -1,17 +1,19 @@
-import "./sectionContainer.css";
-import { ReactNode } from "react";
+import React from "react";
+import "./SectionContainer.css";
 
 interface SectionContainerProps {
-  children: ReactNode;
-  flexAmount?: number;
+  titleBar?: React.ReactNode;
+  children: React.ReactNode;
 }
+
 const SectionContainer: React.FC<SectionContainerProps> = ({
+  titleBar,
   children,
-  flexAmount = 1,
 }) => {
   return (
-    <div style={{ flex: flexAmount }} className='SectionContainer'>
-      {children}
+    <div className='SectionContainer'>
+      {titleBar}
+      <div className='childrenContainer'>{children}</div>
     </div>
   );
 };

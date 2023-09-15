@@ -1,19 +1,43 @@
 .SectionContainer {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.47);
-  animation: SectionContainerIntro 2s ease forwards;
+  min-height: 100vh;
+  min-height: calc(100vh - 120px);
+
   padding: 10px;
+  animation: SectionContainerIntro 2s ease forwards;
+  @media screen and (min-width: 2000px) {
+    padding: 1rem 4rem;
+  }
+  @media screen and (min-height: 1200px) {
+    padding: 3em 0rem;
+  }
+}
+
+.childrenContainer {
+  max-width: 2000px;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  @media screen and (min-width: 2300px) {
+    border: 5px solid rgba(0, 0, 0, 0.236);
+  }
 }
 
 @keyframes SectionContainerIntro {
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }

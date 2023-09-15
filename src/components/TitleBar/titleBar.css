@@ -1,9 +1,16 @@
 .TitleBar {
-  padding: 10px;
   text-transform: uppercase;
   text-align: center;
   font-style: italic;
-  position: relative;
-  padding: 10px;
-  max-height: min-content;
+  align-self: flex-start;
+  justify-self: center;
+  flex: 1;
+  width: 100%;
+  max-height: 100px;
+  min-height: 50px;
+  background-color: rgba(0, 0, 0, 0.424);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
 }

@@ -1,14 +1,35 @@
+import { useEffect, useRef, useState } from "react";
 import "./textBox.css";
-import useDelayedIntro from "../../hooks/useDelayedIntro";
 
 interface TextBoxProps {
   text: string;
-  delay?: number;
 }
-const TextBox: React.FC<TextBoxProps> = ({ text, delay = 0 }) => {
-  const isVisible = useDelayedIntro(delay);
+const TextBox: React.FC<TextBoxProps> = ({ text }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      }
+    );
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
   return (
-    <div className={`TextBox ${isVisible ? "TextBoxAnim" : ""}`}>
+    <div ref={ref} className={`TextBox ${isVisible ? "TextBoxAnim" : ""}`}>
       <pre>{text}</pre>
     </div>
   );

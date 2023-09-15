@@ -3,6 +3,7 @@ import emailjs from "emailjs-com";
 import TitleBar from "../../components/TitleBar/TitleBar";
 import Button from "../../components/Button/Button";
 import SectionContainer from "../../components/SectionContainer/SectionContainer";
+import BaseBox from "../../components/BaseBox/BaseBox";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -23,8 +24,6 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    console.log(import.meta.env.VITE_EMAILJS_SERVICE_ID);
 
     emailjs
       .send(
@@ -49,10 +48,8 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <>
-      <SectionContainer>
-        <TitleBar text='Send an email' />
-
+    <SectionContainer titleBar={<TitleBar text='Send an email' />}>
+      <BaseBox>
         <form
           onSubmit={handleSubmit}
           style={{
@@ -70,7 +67,6 @@ const Contact: React.FC = () => {
             onChange={handleInputChange}
             required
           />
-
           <label>Email:</label>
           <input
             style={{ width: "100%", color: "black" }}
@@ -80,7 +76,6 @@ const Contact: React.FC = () => {
             onChange={handleInputChange}
             required
           />
-
           <label>Message:</label>
           <textarea
             style={{ width: "100%", color: "black" }}
@@ -91,8 +86,8 @@ const Contact: React.FC = () => {
           ></textarea>
           <Button title='Send Message' />
         </form>
-      </SectionContainer>
-    </>
+      </BaseBox>
+    </SectionContainer>
   );
 };
 

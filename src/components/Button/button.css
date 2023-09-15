@@ -2,15 +2,15 @@
   border-image: url("../../assets/images/border1.svg");
   border-image-slice: 45;
   border-width: 15px;
-
   background-color: rgba(0, 0, 0, 0.223);
   color: white;
   flex: 1;
-  margin: auto;
   opacity: 0;
-  min-width: fit-content;
   max-width: 500px;
-  max-height: 100px;
+  max-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .ButtonAnim {
