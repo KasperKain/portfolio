@@ -1,4 +1,4 @@
-import "./PageContainer.css";
+import "./pageContainer.css";
 
 interface PageContainerProps {
   children: React.ReactNode;
