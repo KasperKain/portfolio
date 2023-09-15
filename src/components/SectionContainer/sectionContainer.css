@@ -8,8 +8,16 @@
   @media screen and (min-width: 2000px) {
     padding: 1rem 4rem;
   }
+
+  @media screen and (max-width: 400px) {
+    min-height: 150%;
+  }
   @media screen and (min-height: 1200px) {
     padding: 3em 0rem;
+  }
+
+  @media screen and (max-height: 700px) {
+    min-height: 130%;
   }
 }
 

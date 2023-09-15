@@ -12,4 +12,5 @@
   min-height: 50px;
   flex-grow: 1;
   flex-basis: 0;
+  max-height: 100%;
 }
