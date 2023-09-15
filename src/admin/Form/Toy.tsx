@@ -12,7 +12,7 @@ interface Values {
   github?: string;
 }
 
-const Art: React.FC = () => {
+const Toy: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [values, setValues] = useState<Values>({});
   const navigate = useNavigate();
@@ -34,7 +34,7 @@ const Art: React.FC = () => {
     if (!e.target.files) return;
     try {
       const image = await convertImage(e);
-      setValues({ ...values, [e.target.name]: image });
+      setValues({ ...values, image: image as string });
     } catch (err) {
       console.error("Error uploading image:", err);
     }
@@ -50,6 +50,7 @@ const Art: React.FC = () => {
       github: values.github,
       image: values.image,
     };
+    console.log(toysData);
 
     if (id) {
       updateData("toys", id, toysData).then(() => navigate("/admin"));
@@ -95,4 +96,4 @@ const Art: React.FC = () => {
   );
 };
 
-export default Art;
+export default Toy;

@@ -17,7 +17,6 @@ const NavWheel: React.FC<NavWheelProps> = (props) => {
     { name: "games", path: "games", title: "GAMES" },
     { name: "web", path: "web", title: "WEBSITES" },
     { name: "toys", path: "toys", title: "WEB TOYS" },
-    { name: "art", path: "art", title: "DOODLES" },
   ]);
   useLayoutEffect(() => {
     // Algorithm for shifting around the list of pages to ensure the

@@ -10,9 +10,10 @@ import SectionContainer from "../../components/SectionContainer/SectionContainer
 import CustomList from "../../components/CustomList/CustomList";
 import BaseBox from "../../components/BaseBox/BaseBox";
 import ButtonContainer from "../../components/ButtonContainer/ButtonContainer";
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 
 const Games: React.FC = () => {
-  const [games, setGames] = useState<any[]>([]);
+  const [games, setGames] = useState<any[]>();
 
   useEffect(() => {
     fetchData("games").then((data) => {
@@ -23,7 +24,7 @@ const Games: React.FC = () => {
   return (
     <PageContainer>
       {!games ? (
-        <></>
+        <LoadingSpinner />
       ) : (
         games.map((game) => (
           <SectionContainer
@@ -36,10 +37,12 @@ const Games: React.FC = () => {
               <ButtonContainer>
                 <Button
                   title='PLAY'
+                  nullMessage={!game.live ? "unavailable" : undefined}
                   onClick={() => window.open(game.live, "_blank")}
                 />
                 <Button
                   title='VIEW'
+                  nullMessage={!game.github ? "unavailable" : undefined}
                   onClick={() => window.open(game.github, "_blank")}
                 />
               </ButtonContainer>

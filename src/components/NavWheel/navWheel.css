@@ -5,6 +5,10 @@
   height: 120px;
   background-color: rgb(0, 0, 0);
   border-bottom: 3px solid rgba(255, 255, 255, 0.548);
+
+  @media screen and (max-width: 400px) {
+    padding: 0;
+  }
 }
 
 .NavWheel div {
@@ -23,12 +27,4 @@
   align-items: center;
   height: 100%;
   width: 100%;
-}
-
-.slick-arrow {
-  z-index: 6;
-}
-
-.slick-arrow::before {
-  display: none;
 }

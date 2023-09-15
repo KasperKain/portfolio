@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { deleteData, fetchData } from "../../services/api";
 
-const types = ["games", "art", "pages", "toys"];
+const types = ["games", "pages", "toys"];
 
 const Admin: React.FC = () => {
   const [itemList, setItemList] = useState<any[]>([]);

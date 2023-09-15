@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import Games from "./pages/Games/Games";
-import Art from "./pages/Art/Art";
 import Toys from "./pages/Toys/Toys";
 import Pages from "./pages/Web/Web";
 import Admin from "./admin/Admin/Admin";
@@ -12,7 +11,6 @@ import NavWheel from "./components/NavWheel/NavWheel";
 import Empty from "./pages/Empty/Empty";
 
 import SingleGame from "./admin/Form/Game";
-import SingleArt from "./admin/Form/Art";
 import SinglePage from "./admin/Form/Page";
 import SingleToy from "./admin/Form/Toy";
 
@@ -41,7 +39,7 @@ function App() {
   const isAuthenticated = localStorage.getItem("token") ? true : false;
 
   const shouldDisplayNavWheel = (path: string) => {
-    const navPaths = ["/games", "/art", "/toys", "/web", "/"];
+    const navPaths = ["/games", "/toys", "/web", "/"];
     return navPaths.includes(path);
   };
 
@@ -55,7 +53,6 @@ function App() {
       <Logout />
       <Routes>
         <Route path='/games' element={<Games />} />
-        <Route path='/art' element={<Art />} />
         <Route path='/toys' element={<Toys />} />
         <Route path='/web' element={<Pages />} />
         <Route path='/' element={<Home />} />
@@ -103,24 +100,6 @@ function App() {
           element={
             <ProtectedWrapper isAuthenticated={isAuthenticated}>
               <SinglePage />
-            </ProtectedWrapper>
-          }
-        />
-
-        <Route
-          path='/admin/create/art'
-          element={
-            <ProtectedWrapper isAuthenticated={isAuthenticated}>
-              <SingleArt />
-            </ProtectedWrapper>
-          }
-        />
-
-        <Route
-          path='/admin/create/art/:id'
-          element={
-            <ProtectedWrapper isAuthenticated={isAuthenticated}>
-              <SingleArt />
             </ProtectedWrapper>
           }
         />
