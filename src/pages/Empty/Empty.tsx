@@ -8,16 +8,14 @@ import SectionContainer from "../../components/SectionContainer/SectionContainer
 const Empty: React.FC = () => {
   return (
     <PageContainer>
-      <SectionContainer>
-        <TitleBar text='404 - Not Found' />
-        <TextBox text='Oopsy' />
-        <Button
-          title='Go Home'
-          onClick={() => {
-            window.location.href = "/";
-          }}
-        />
-      </SectionContainer>
+      <TitleBar text='404 - Not Found' />
+      <TextBox text='Oopsy' />
+      <Button
+        title='Go Home'
+        onClick={() => {
+          window.location.href = "/";
+        }}
+      />
     </PageContainer>
   );
 };

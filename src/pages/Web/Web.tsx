@@ -9,9 +9,9 @@ import PageContainer from "../../components/PageContainer/PageContainer";
 import SectionContainer from "../../components/SectionContainer/SectionContainer";
 import BaseBox from "../../components/BaseBox/BaseBox";
 import ButtonContainer from "../../components/ButtonContainer/ButtonContainer";
-
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 const Web: React.FC = () => {
-  const [websites, setWebsites] = useState<any[]>([]);
+  const [websites, setWebsites] = useState<any[]>();
 
   useEffect(() => {
     fetchData("pages").then((data) => {
@@ -22,7 +22,7 @@ const Web: React.FC = () => {
   return (
     <PageContainer>
       {!websites ? (
-        <></>
+        <LoadingSpinner />
       ) : (
         websites.map((website) => (
           <SectionContainer
