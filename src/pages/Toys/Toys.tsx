@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchData } from "../../services/api";
 import TitleBar from "../../components/TitleBar/TitleBar";
-import TextBox from "../../components/TextBox/TextBox";
 import Button from "../../components/Button/Button";
 import ImageBox from "../../components/ImageBox/ImageBox";
 import { v4 as uuid } from "uuid";
